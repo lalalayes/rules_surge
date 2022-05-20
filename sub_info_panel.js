@@ -8,9 +8,9 @@
   let total = info.total;
   let expire = args.expire || info.expire;
   let proportion = used / total;
-  let content = [`Used   : ${bytesToSize(used)} | (${toPercent(proportion)}) 
-Avl       : ${bytesToSize(total-used)}
-Reset  : ${resetDayLeft} Days`];
+  let content = [`已用: ${bytesToSize(used)} | (${toPercent(proportion)}) 
+剩余: ${bytesToSize(total-used)}
+重置: ${resetDayLeft} Days`];
 /*
   if (resetDayLeft) {
     content.push(`重置：剩余${resetDayLeft}天`);
@@ -18,7 +18,7 @@ Reset  : ${resetDayLeft} Days`];
 */
   if (expire) {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`Expire : ${formatTime(expire)}`);
+    content.push(`到期: ${formatTime(expire)}`);
   }
 
   let now = new Date();
