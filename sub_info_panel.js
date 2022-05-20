@@ -9,7 +9,7 @@
   let expire = args.expire || info.expire;
   let proportion = used / total;
   let content = [`Used   : ${bytesToSize(used)} | (${toPercent(proportion)}) 
-Avl    : ${bytesToSize(total-used)}
+Avl     : ${bytesToSize(total-used)}
 Reset  : ${resetDayLeft} Days`];
 /*
   if (resetDayLeft) {
