@@ -8,9 +8,9 @@
   let total = info.total;
   let expire = args.expire || info.expire;
   let proportion = used / total;
-  let content = [`𝗨𝘀𝗲𝗱 : ${bytesToSize(used)} (${toPercent(proportion)}) 
+  let content = [`𝗨𝘀𝗲𝗱 : ${bytesToSize(used)} | (${toPercent(proportion)}) 
 𝗔𝘃𝗹 : ${bytesToSize(total-used)}
-重置 : ${resetDayLeft} Days`];
+𝗥𝗲𝘀𝗲𝘁 : ${resetDayLeft} Days`];
 /*
   if (resetDayLeft) {
     content.push(`重置：剩余${resetDayLeft}天`);
@@ -18,7 +18,7 @@
 */
   if (expire) {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`到期：${formatTime(expire)}`);
+    content.push(`Expire ：${formatTime(expire)}`);
   }
 
   let now = new Date();
@@ -28,7 +28,7 @@
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
-    title: `${args.title} ` + `| 𝗥𝗲𝘀𝗲𝘁 : ` + `${resetDayLeft} Days`,
+    title: `${args.title} `,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
