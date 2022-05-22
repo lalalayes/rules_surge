@@ -8,7 +8,7 @@
   let total = info.total;
   let expire = args.expire || info.expire;
   let proportion = used / total;
-  let content = [`已用:  ${bytesToSize(used)} [${toPercent(proportion)}] 
+  let content = [`已用:  ${bytesToSize(used)} | (${toPercent(proportion)}) 
 剩余:  ${bytesToSize(total-used)}
 重置:  ${resetDayLeft} Days`];
 /*
