@@ -1,0 +1,31 @@
+#!name=本地模块
+#!desc=流媒体，电信，机场
+
+[Script]
+#網路詳情 标题显示为根节点名
+#NET_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/ipcheck.js,argument=icon=externaldrive.connected.to.line.below&color=#9a7ff7&group=𝐏𝐫𝐨𝐱𝐲
+net-info-panel=type=generic,timeout=10,script-path=https://raw.githubusercontent.com/ventusyu/ventus/main/Panel/Net-info-panel.js
+
+# 流媒体解锁检测
+stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/JS/stream-all.js
+
+//机场信息
+Sub_info = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/lalalayes/rules_surge/main/sub_info_panel.js,script-update-interval=0,argument=url=https%3A%2F%2Fapi.nxtlnodes.com%2FSubscription%2FShadowRocketImportService%3Fsid%3D25824%26token%3DszRziA8ZLpv&reset_day=10&title=AmyTelecom&icon=bonjour&color=#007aff
+
+Sub_info_flower = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/lalalayes/rules_surge/main/sub_info_panel.js,script-update-interval=0,argument=url=https%3A%2F%2Fapi.flowercloud.yt%2Fsub%3Ftarget%3Dsurge%26ver%3D4%26insert%3Dtrue%26emoji%3Dfalse%26tfo%3Dtrue%26udp%3Dtrue%26surge.doh%3Dtrue%26filename%3DFlower_SS%26url%3Dhttps%253A%252F%252Fflowercloud.xyz%252Fmodules%252Fservers%252FV2raySocks%252Fosubscribe.php%253Fsid%253D4916%2526token%253DfA1pKCtrGQth%2526sip002%253D1&reset_day=16&title=FlowerCloud&icon=leaf.circle&color=#eb7c7c
+
+[Panel]
+# 网络详情
+net-info-panel=title="网络状态",content="请刷新",style=info,script-name=net-info-panel,update-interval=3600
+
+# 流媒体解锁检测
+stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=-1
+
+//机场信息
+Sub_info = script-name=Sub_info,update-interval=600
+
+Sub_info_flower = script-name=Sub_info_flower,update-interval=600
+
+
+[MITM]
+hostname = %APPEND% e.189.cn:443
