@@ -12,7 +12,7 @@ let icon_s = mitm_status.enabled&&rewrite_status.enabled&&scripting_status.enabl
 //点击按钮，重载配置（同时刷新dns）
 if ($trigger == "button") {
 	await httpAPI("/v1/profiles/reload");
-  await httpAPI("/v1/dns/flush");
+	await httpAPI("/v1/dns/flush");
 	$notification.post("配置重载","配置重载成功","dns已刷新")
 };
 $done({
