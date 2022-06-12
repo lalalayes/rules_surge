@@ -27,7 +27,7 @@ functionstatus = script-name=functionstatus, title="Surge", content="请刷新",
 net-info-panel=title="网络状态",content="请刷新",style=info,script-name=net-info-panel,update-interval=3600
 
 # 流媒体解锁检测
-stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=-1
+stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=600
 
 #流量统计
 TrafficStatistics = script-name=TrafficStatistics,update-interval=1
