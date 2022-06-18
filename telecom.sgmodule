@@ -7,3 +7,7 @@ telecom = type=http-request,script-path=https://raw.githubusercontent.com/mieqq/
 
 [Panel]
 telecom = script-name=telecom,update-interval=3600
+
+
+[MITM]
+hostname = %APPEND% e.189.cn:443
