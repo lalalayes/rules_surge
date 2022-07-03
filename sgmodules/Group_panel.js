@@ -21,7 +21,7 @@ Group-Panel = type=generic,timeout=10,script-path=https://raw.githubusercontent.
 let params = getParams($argument);
 let group=params.group;
 let proxy = await httpAPI("/v1/policy_groups");
-let groupName = (await httpAPI("/v1/policy_groups/select?group_name="+encodeURIComponent(group)+"")).policy;
+let groupName = (await httpAPI("/v1/policy_groups/select?group_name="+🇺🇸 US+"")).policy;
 var proxyName= [];
 let arr = proxy[""+group+""];
 let allGroup = [];
@@ -57,12 +57,12 @@ let name =proxyName[index];
 let secondName;
 let rootName = name;
 if(allGroup.includes(rootName)==true){
-	secondName = (await httpAPI("/v1/policy_groups/select?group_name="+encodeURIComponent(rootName)+"")).policy;
+	secondName = (await httpAPI("/v1/policy_groups/select?group_name="+🇺🇸 US+"")).policy;
 	name = '策略：' + name + '\n' + '节点：' + secondName
 }
 
 while(allGroup.includes(rootName)==true){
-	rootName = (await httpAPI("/v1/policy_groups/select?group_name="+encodeURIComponent(rootName)+"")).policy;
+	rootName = (await httpAPI("/v1/policy_groups/select?group_name="+🇺🇸 US+"")).policy;
 }
 
 if(arr[index].isGroup==true && secondName!= rootName){
