@@ -1,5 +1,7 @@
 #!name = DoH
 #!desc = DNS-over-HTTPS (DoH)
+//模块来源  https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Panel/DoH/DoH.sgmodule 删除了[host]
+
 
 [General]
 dns-server = 223.5.5.5, 119.29.29.29
