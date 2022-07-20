@@ -49,7 +49,7 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
         // console.log(result["Disney"])
       } else if (status==STATUS_NOT_AVAILABLE) {
         //console.log(3)
-        disney_result="Disney+: 未支持 🚫 "
+        disney_result="Disney+: 未支持 🚫 "+region.toUpperCase()
       } else if (status==STATUS_TIMEOUT) {
         disney_result="Disney+: 检测超时 🚦"
       }
