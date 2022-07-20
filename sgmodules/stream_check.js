@@ -212,7 +212,7 @@ panel_result['content'] = content
         // 不支持解锁
         if (error === 'Not Available') {
           console.log("不支持")
-          return { status: STATUS_NOT_AVAILABLE }
+          return { region, status: STATUS_NOT_AVAILABLE }
         }
         
         // 检测超时
