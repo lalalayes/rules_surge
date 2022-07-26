@@ -1,10 +1,9 @@
-
 /*
  * 由@LucaLin233编写
  * 原脚本地址：https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/JS/stream-all.js
  * 由@Rabbit-Spec修改
- * 更新日期：2022.06.15
- * 版本：2.0
+ * 更新日期：2022.07.22
+ * 版本：2.3
  */
 
 const REQUEST_HEADERS = {
@@ -45,13 +44,13 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
       } else if (status==STATUS_AVAILABLE){
         //console.log(2)
         console.log(region)
-        disney_result="Disney+: 已解锁，区域: "+region.toUpperCase()
+        disney_result="Disney+: 已解锁 ➟ "+region.toUpperCase()
         // console.log(result["Disney"])
       } else if (status==STATUS_NOT_AVAILABLE) {
         //console.log(3)
-        disney_result="Disney+: 未支持 🚫 "
+        disney_result="Disney+: 未解锁 🚫 "
       } else if (status==STATUS_TIMEOUT) {
-        disney_result="Disney+: 检测超时 🚦"
+        disney_result="Disney+: 检测超时🚦，请刷新面板"
       }
 result.push(disney_result)
 console.log(result)
@@ -102,13 +101,13 @@ panel_result['content'] = content
     await inner_check()
       .then((code) => {
         if (code === 'Not Available') {
-          youtube_check_result += '未支持 🚫'
+          youtube_check_result += '未解锁 🚫'
         } else {
-          youtube_check_result += '已解锁，区域: ' + code.toUpperCase()
+          youtube_check_result += '已解锁 ➟ ' + code.toUpperCase()
         }
       })
       .catch((error) => {
-        youtube_check_result += '检测超时 🚦'
+        youtube_check_result += '检测超时🚦，请刷新面板'
       })
   
     return youtube_check_result
@@ -160,7 +159,7 @@ panel_result['content'] = content
         if (code === 'Not Found') {
           return inner_check(80018499)
         }
-        netflix_check_result += '已完整解锁，区域: ' + code.toUpperCase()
+        netflix_check_result += '已完整解锁 ➟ ' + code.toUpperCase()
         return Promise.reject('BreakSignal')
       })
       .then((code) => {
@@ -168,7 +167,7 @@ panel_result['content'] = content
           return Promise.reject('Not Available')
         }
   
-        netflix_check_result += '仅解锁自制剧，区域: ' + code.toUpperCase()
+        netflix_check_result += '仅解锁自制剧 ➟ ' + code.toUpperCase()
         return Promise.reject('BreakSignal')
       })
       .catch((error) => {
@@ -176,10 +175,10 @@ panel_result['content'] = content
           return
         }
         if (error === 'Not Available') {
-          netflix_check_result += '未支持 🚫'
+          netflix_check_result += '未解锁 🚫'
           return
         }
-        netflix_check_result += '检测超时 🚦'
+        netflix_check_result += '检测超时🚦，请刷新面板'
       })
   
     return netflix_check_result
@@ -303,7 +302,7 @@ panel_result['content'] = content
               reject('Error')
               return
             }
-            if (response.status !== 200 || data.indexOf('unavailable') !== -1) {
+            if (response.status !== 200 || data.indexOf('Sorry, Disney+ is not available in your region.') !== -1) {
               reject('Not Available')
               return
             }
