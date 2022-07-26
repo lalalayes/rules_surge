@@ -68,13 +68,26 @@ while(allGroup.includes(rootName)==true){
 if(arr[index].isGroup==true && secondName!= rootName){
 name='策略：' + name + '\n' + '节点：' + rootName;
 }
+	
+	
+let url = "http://ip-api.com/json/?lang=zh-CN"
 
-    $done({
+$httpClient.get(url, function(error, response, data){
+    let jsonData = JSON.parse(data)
+    let country = jsonData.country
+    let emoji = getFlagEmoji(jsonData.countryCode)
+    let city = jsonData.city
+    let isp = jsonData.isp
+    let ip = jsonData.query
+   $done({
       title:group,
-      content:name,
+      content:name+`IP信息：${ip}\n运营商：${isp}\n所在地：${emoji}${country} - ${city}`,
       icon: params.icon,
 		"icon-color":params.color
     });
+});
+
+   
 })();
 
 
