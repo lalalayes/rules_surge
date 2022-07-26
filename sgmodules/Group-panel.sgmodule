@@ -1,7 +1,0 @@
-[Panel]
-Group-Panel = script-name=Group-Panel, title="节点详情", content="请刷新", style=info, update-interval=1
-[Script]
-Group-Panel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/lalalayes/rules_surge/test/sgmodules/Group_panel.js,argument=icon=network&color=#86abee&group=🎬 Disney
-[Rule]
-# > Apple News
-RULE-SET,https://raw.githubusercontent.com/VirgilClyne/iRingo/main/RuleSet/News.list,🍎Apple
