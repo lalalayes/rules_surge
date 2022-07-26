@@ -7,7 +7,7 @@
 示例↓↓↓ 
 ----------------------------------------
 [Panel]
-Group-Panel = script-name=Group-Panel,update-interval=1
+Group-Panel = script-name=Group-Panel, title="节点详情", content="请刷新", style=info, update-interval=1
 [Script]
 Group-Panel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/groupPanel.js,argument=icon=network&color=#86abee&group=Master
   对应参数：
